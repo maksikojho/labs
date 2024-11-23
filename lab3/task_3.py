@@ -10,13 +10,9 @@ def count_letters(text):
     return dict
 def calculate_frequency(letters):
     global main_str
-    all_let = 0
-    for i in main_str:
-        if i.isalpha():
-            all_let += 1
     freqs = {}
     for letter in letters:
-        freqs[letter] = '%.2f' % (letters[letter] / all_let)
+        freqs[letter] = '%.2f' % (letters[letter] / sum(letters.values()))
     return freqs
 # TODO Напишите функцию calculate_frequency
 
