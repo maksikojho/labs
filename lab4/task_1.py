@@ -3,11 +3,7 @@ import json
 
 def task() -> float:
     global data
-    result = 0
-    for i in data:
-        result += i['weight'] * i['score']
-    result = round(result, 3)
-    return result
+    return sum([item['weight']*item['score'] for item in data]).__round__(3)
 
 
 
