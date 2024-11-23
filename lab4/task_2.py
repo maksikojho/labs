@@ -13,13 +13,8 @@ def line_separator(line_s, delimeter=',') -> list:
 def task() -> None:
     # TODO считать содержимое csv файла
     with open(INPUT_FILENAME, 'r') as f:
-        json_list = []
         keys = line_separator(f.readline())
-        for lines in f:
-
-           #if line_separator(lines) != keys:
-                lines_new = line_separator(lines)
-                json_list.append(dict(zip(keys, lines_new)))
+        json_list = [dict(zip(keys, line_separator(linia))) for linia in f]
 
     # TODO Сериализовать в файл с отступами равными 4
     with open(OUTPUT_FILENAME, 'w') as f:
