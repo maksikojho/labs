@@ -2,11 +2,7 @@
 def find_common_participants(first_group, second_group, sep=','):
     l1 = first_group.split(sep=sep)
     l2 = second_group.split(sep=sep)
-    same_names = []
-    for i in range(len(l1)):
-        for j in range(len(l2)):
-            if l1[i] == l2[j]:
-                same_names.append(l1[i])
+    same_names = set(l1) & set(l2)
     return sorted(same_names)
 
 
