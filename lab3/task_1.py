@@ -2,14 +2,10 @@
 # TODO Напишите функцию для поиска индекса товара
 
 def finder(list, item):
-    result = None
-    i = 0
-    while i < len(list):
-        result = i if item == list[i] else None
-        if result is not None:
-            break
-        i += 1
-    return result
+    for index, tovar in enumerate(list):
+        if tovar == item:
+            return index
+
 
 items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
 
