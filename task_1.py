@@ -18,10 +18,10 @@ class Book:
         self.name = name
         self.pages = pages
 
-    def __str__(self):
+    def __str__(self) - > str:
         return f'Книга "{self.name}"'
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Book(id_={self.id_}, name='{self.name}', pages={self.pages})"
 
 if __name__ == "__main__":
